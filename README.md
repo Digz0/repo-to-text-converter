@@ -1,4 +1,4 @@
-# MyRepoToText
+# repo-to-text-converter
 
 This Python script clones a GitHub repository and extracts the content of text files into a single output file.
 
