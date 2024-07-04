@@ -1,13 +1,38 @@
-# Repository to Text Converter
+# MyRepoToText
 
-This Python script clones a GitHub repository, extracts content from specific file types, processes that content, and saves it to a text file.
+This Python script clones a GitHub repository and extracts the content of text files into a single output file.
 
 ## Usage
 
-1. Install required packages: pip install gitpython chardet
-2. Run the script: python converter.py
-3. The script will clone the specified repository and save the processed content to `temp_repo_content.txt`.
+Run the script from the command line, providing the GitHub repository URL as an argument:
 
-## Customization
+py converter.py <repo_url>
 
-To process a different repository, modify the `repo_url` variable in the script.
+## Requirements
+
+- Python 3.x
+- GitPython
+- chardet
+
+To install the required packages, use pip with the provided requirements.txt file:
+
+py -m pip install -r requirements.txt
+
+## Features
+
+- Clones a specified GitHub repository
+- Identifies and processes text files within the repository
+- Combines content from all text files into a single output file
+- Handles various text encodings
+
+## Output
+
+The script generates a file named "temp_repo_content.txt" containing the extracted text content from the repository.
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome. Feel free to check issues page if you want to contribute.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
