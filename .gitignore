@@ -3,3 +3,8 @@ temp_repo_content.txt
 
 # Ignore temporary repository folder
 temp_repo/
+
+# Ignore test files
+__pycache__/
+test_converter.py
+test_output.txt
