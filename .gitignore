@@ -1,0 +1,5 @@
+# Ignore temporary repository content file
+temp_repo_content.txt
+
+# Ignore temporary repository folder
+temp_repo/

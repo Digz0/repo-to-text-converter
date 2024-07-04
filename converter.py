@@ -1,4 +1,5 @@
 import os
+import sys
 from git import Repo
 import tempfile
 import mimetypes
@@ -34,7 +35,12 @@ def repo_to_text(repo_url, output_file):
         except Exception as e:
             print(f"An error occurred: {e}")
 
-# Usage
-repo_url = "https://github.com/Digz0/RevisarAI"
-output_file = "temp_repo_content.txt"
-repo_to_text(repo_url, output_file)
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python converter.py <repo_url>")
+        sys.exit(1)
+
+    repo_url = sys.argv[1]
+    output_file = "temp_repo_content.txt"
+    repo_to_text(repo_url, output_file)
+    print(f"Repository content saved to {output_file}")
