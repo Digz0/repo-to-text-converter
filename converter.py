@@ -9,6 +9,10 @@ def clone_repo(repo_url, local_path):
     Repo.clone_from(repo_url, local_path)
 
 def is_text_file(file_path):
+    # Add Dockerfile to the list of explicitly recognized text files
+    if os.path.basename(file_path).lower() == 'dockerfile':
+        return True
+    
     mime_type, _ = mimetypes.guess_type(file_path)
     if mime_type and (mime_type.startswith('text/') or mime_type in ['application/json', 'application/xml']):
         return True
