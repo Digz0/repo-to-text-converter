@@ -10,16 +10,13 @@ def clone_repo(repo_url, local_path):
     Repo.clone_from(repo_url, local_path)
 
 def is_text_file(file_path):
-    # Add Dockerfile to the list of explicitly recognized text files
-    if os.path.basename(file_path).lower() == 'dockerfile':
-        return True
-    
     mime_type, _ = mimetypes.guess_type(file_path)
     if mime_type and (mime_type.startswith('text/') or mime_type in ['application/json', 'application/xml']):
         return True
     try:
         with open(file_path, 'rb') as file:
-            return b'\0' not in file.read(1024) and chardet.detect(file.read(1024))['encoding'] is not None
+            chunk = file.read(1024)
+            return b'\0' not in chunk and chardet.detect(chunk)['encoding'] is not None
     except IOError:
         return False
 
@@ -56,3 +53,6 @@ if __name__ == "__main__":
     repo_url = sys.argv[1]
     output_file = "temp_repo_content.txt"
     repo_to_text(repo_url, output_file)
+
+
+
