@@ -13,6 +13,7 @@ py converter.py <repo_url>
 - Python 3.x
 - GitPython
 - chardet
+- tqdm
 
 To install the required packages, use pip with the provided requirements.txt file:
 
@@ -24,6 +25,7 @@ py -m pip install -r requirements.txt
 - Identifies and processes text files within the repository
 - Combines content from all text files into a single output file
 - Handles various text encodings
+- Displays a progress bar during file processing
 
 ## Output
 
